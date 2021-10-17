@@ -1,0 +1,33 @@
+paths:
+  /swagger:
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: "#/definitions/CommonResponse"
+  /cron:
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: "#/definitions/CommonResponse"
+
+  /mqtt:
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: "#/definitions/CommonResponse"
+
+  /graphql:
+    get:
+      produces:
+        - text/html
+      responses:
+        200:
+          description: Success
+          schema:
+            type: string

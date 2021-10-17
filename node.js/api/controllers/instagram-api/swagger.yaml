@@ -1,0 +1,20 @@
+paths:
+  /instagram-image:
+    get:
+      produces:
+        - image/jpeg
+      responses:
+        200:
+          description: Success
+          schema:
+            type: file
+
+  /instagram-imageclock:
+    get:
+      produces:
+        - image/jpeg
+      responses:
+        200:
+          description: Success
+          schema:
+            type: file
