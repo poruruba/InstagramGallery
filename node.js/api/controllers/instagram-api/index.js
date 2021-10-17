@@ -11,7 +11,7 @@ const LINE_COLOR = '#00000088';
 const CAPTION_PADDING = 10;
 const UPDATE_INTERVAL = 60 * 60 * 24 * 1000;
 
-const INITIAL_ACCESS_TOKEN = 'y’·ŠúŠÔƒAƒNƒZƒXƒg[ƒNƒ“z';
+const INITIAL_ACCESS_TOKEN = 'ã€é•·æœŸé–“ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³ã€‘';
 
 const image_list_url = 'https://graph.instagram.com/me/media';
 const refresh_url = 'https://graph.instagram.com/refresh_access_token';
@@ -136,7 +136,7 @@ async function get_all_image_list(access_token){
 
 async function read_token(){
 	try{
-		var result = await fs.readFile(TOKEN_FILE_PATh);
+		var result = await fs.readFile(TOKEN_FILE_PATH);
 		return JSON.parse(result);
 	}catch(error){
 		return {
