@@ -312,14 +312,15 @@ long doHttpGetJson(String url, JsonDocument *p_output)
   Stream *resp = http.getStreamPtr();
 
   DeserializationError err = deserializeJson(*p_output, *resp);
+  if (err){
+    Serial.println("Error: deserializeJson");
+    http.end();
+    return -1;
+  }
+
   serializeJson(json_response, Serial);
   Serial.println("");
   http.end();
-
-  if (err){
-    Serial.println("Error: deserializeJson");
-    return -1;
-  }
 
   return 0;
 }
