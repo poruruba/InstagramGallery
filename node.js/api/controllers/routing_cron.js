@@ -29,14 +29,16 @@ function parse_cron() {
 
       // cronの登録
       const defs = JSON.parse(fs.readFileSync(fname).toString());
-      if( !defs.enable )
-        return;
-        
-      const handler = defs.handler || DEFAULT_HANDLER;
-      const proc = require('./' + folder)[handler];
+      defs.forEach(item => {
+        if (!item.enable )
+          return;
+          
+        const handler = item.handler || DEFAULT_HANDLER;
+        const proc = require('./' + folder)[handler];
 
-      cron.schedule(defs.schedule, () => proc(defs.param));
-      console.log(defs.schedule + " cron " + folder + ' ' + handler);
+        cron.schedule(item.schedule, () => proc(item.param));
+        console.log(item.schedule + " cron " + folder + ' ' + handler);
+      });
     } catch (error) {
       console.log(error);
     }
