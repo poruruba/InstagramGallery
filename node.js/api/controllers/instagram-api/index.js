@@ -24,6 +24,11 @@ const fs = require('fs').promises;
 const textToSVG = TextToSVG.loadSync(FONT_PATH);
 
 exports.handler = async (event, context, callback) => {
+	if( event.path == '/instagram-imagelist'){
+		var json = await read_token();
+		var list = await get_all_image_list(json.access_token);
+		return new Response({ list: list.data });
+	}else
 	if (event.path == '/instagram-image') {
 		const width = event.queryStringParameters.width ? Number(event.queryStringParameters.width) : 480;
 		const height = event.queryStringParameters.height ? Number(event.queryStringParameters.height) : 320;
