@@ -18,3 +18,11 @@ paths:
           description: Success
           schema:
             type: file
+            
+  /instagram-imagelist:
+    get:
+      responses:
+        200:
+          description: Success
+          schema:
+            type: file
