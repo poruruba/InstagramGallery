@@ -1,6 +1,7 @@
 'use strict';
 
 const HELPER_BASE = process.env.HELPER_BASE || '../../helpers/';
+const Response = require(HELPER_BASE + 'response');
 const BinResponse = require(HELPER_BASE + 'binresponse');
 
 const FONT_PATH = process.env.THIS_BASE_PATH + '/font/ipaexg.ttf';
